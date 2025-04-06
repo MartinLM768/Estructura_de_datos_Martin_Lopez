@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
 
@@ -48,6 +49,34 @@ public class Main {
                 actual = actual.siguiente;
             }
         }
+
+        public void listarClientesEnOrdenPila() {
+            if (cabeza == null) {
+                System.out.println("La lista está vacía.");
+                return;
+            }
+
+            Stack<Cliente> pila = new Stack<>();
+            Cliente actual = cabeza;
+
+            // Apilar los clientes
+            while (actual != null) {
+                pila.push(actual);
+                actual = actual.siguiente;
+            }
+
+            // Desapilar y mostrar los clientes
+            System.out.println("Lista de clientes en orden de pila:");
+            while (!pila.isEmpty()) {
+                Cliente cliente = pila.pop();
+                System.out.println("Cédula: " + cliente.cedula + ", Nombre: " + cliente.nombre);
+            }
+        }
+
+        public void borrarClientes() {
+            cabeza = null;
+            System.out.println("Todos los clientes han sido eliminados.");
+        }
     }
 
     public static void main(String[] args) {
@@ -59,7 +88,9 @@ public class Main {
             System.out.println("\nMenú de Opciones:");
             System.out.println("1. Insertar Cliente");
             System.out.println("2. Listar Clientes");
-            System.out.println("3. Salir");
+            System.out.println("3. Listar Clientes en Orden de Pila");
+            System.out.println("4. Borrar Todos los Clientes");
+            System.out.println("5. Salir");
             System.out.print("Seleccione una opción: ");
             opcion = scanner.nextInt();
 
@@ -78,13 +109,21 @@ public class Main {
                     break;
 
                 case 3:
+                    lista.listarClientesEnOrdenPila();
+                    break;
+
+                case 4:
+                    lista.borrarClientes();
+                    break;
+
+                case 5:
                     System.out.println("Saliendo de la aplicación...");
                     break;
 
                 default:
                     System.out.println("Opción inválida. Por favor, intente nuevamente.");
             }
-        } while (opcion != 3);
+        } while (opcion != 5);
 
         scanner.close();
     }
