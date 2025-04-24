@@ -1,5 +1,0 @@
-C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\obj\Debug\net8.0-windows\Estructura_de_datos_Martin_Lopez.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\obj\Debug\net8.0-windows\Estructura_de_datos_Martin_Lopez.AssemblyInfoInputs.cache
-C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\obj\Debug\net8.0-windows\Estructura_de_datos_Martin_Lopez.AssemblyInfo.cs
-C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\obj\Debug\net8.0-windows\Estructura_de_datos_Martin_Lopez.csproj.CoreCompileInputs.cache
-C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\obj\Debug\net8.0-windows\Estructura_de_datos_Martin_Lopez.sourcelink.json

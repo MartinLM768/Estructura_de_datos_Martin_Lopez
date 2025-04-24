@@ -1,8 +1,5 @@
-using System;
-
 namespace DoublyLinkedListApp.Models
 {
-    // Clase Nodo que representa un elemento de la lista doblemente enlazada
     public class Node
     {
         public int Data { get; set; }
@@ -17,19 +14,11 @@ namespace DoublyLinkedListApp.Models
         }
     }
 
-    // Clase DoublyLinkedList que implementa la lista doblemente enlazada
     public class DoublyLinkedList
     {
         private Node head;
         private Node tail;
 
-        public DoublyLinkedList()
-        {
-            head = null;
-            tail = null;
-        }
-
-        // Método para agregar un nodo al final de la lista
         public void AddToEnd(int data)
         {
             Node newNode = new Node(data);
@@ -46,7 +35,6 @@ namespace DoublyLinkedListApp.Models
             }
         }
 
-        // Método para agregar un nodo al inicio de la lista
         public void AddToStart(int data)
         {
             Node newNode = new Node(data);
@@ -63,7 +51,6 @@ namespace DoublyLinkedListApp.Models
             }
         }
 
-        // Método para eliminar un nodo por su valor
         public bool Remove(int data)
         {
             Node current = head;
@@ -89,30 +76,28 @@ namespace DoublyLinkedListApp.Models
             return false;
         }
 
-        // Método para imprimir la lista en orden
-        public void PrintList()
+        public string PrintList()
         {
             Node current = head;
-            Console.WriteLine("Lista en orden:");
+            string result = "Lista en orden: ";
             while (current != null)
             {
-                Console.Write(current.Data + " ");
+                result += current.Data + " ";
                 current = current.Next;
             }
-            Console.WriteLine();
+            return result;
         }
 
-        // Método para imprimir la lista en orden inverso
-        public void PrintReverse()
+        public string PrintReverse()
         {
             Node current = tail;
-            Console.WriteLine("Lista en orden inverso:");
+            string result = "Lista en orden inverso: ";
             while (current != null)
             {
-                Console.Write(current.Data + " ");
+                result += current.Data + " ";
                 current = current.Previous;
             }
-            Console.WriteLine();
+            return result;
         }
     }
 }
