@@ -1,0 +1,15 @@
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\bin\Debug\net6.0-windows\DoublyLinkedListApp.exe
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\bin\Debug\net6.0-windows\DoublyLinkedListApp.deps.json
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\bin\Debug\net6.0-windows\DoublyLinkedListApp.runtimeconfig.json
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\bin\Debug\net6.0-windows\DoublyLinkedListApp.dll
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\bin\Debug\net6.0-windows\DoublyLinkedListApp.pdb
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\obj\Debug\net6.0-windows\DoublyLinkedListApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\obj\Debug\net6.0-windows\DoublyLinkedListApp.AssemblyInfoInputs.cache
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\obj\Debug\net6.0-windows\DoublyLinkedListApp.AssemblyInfo.cs
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\obj\Debug\net6.0-windows\DoublyLinkedListApp.csproj.CoreCompileInputs.cache
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\obj\Debug\net6.0-windows\DoublyLinkedListApp.sourcelink.json
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\obj\Debug\net6.0-windows\DoublyLinkedListApp.dll
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\obj\Debug\net6.0-windows\refint\DoublyLinkedListApp.dll
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\obj\Debug\net6.0-windows\DoublyLinkedListApp.pdb
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\obj\Debug\net6.0-windows\DoublyLinkedListApp.genruntimeconfig.cache
+C:\Users\martin\Documents\GitHub\Estructura_de_datos_Martin_Lopez\DoublyLinkedListApp\obj\Debug\net6.0-windows\ref\DoublyLinkedListApp.dll

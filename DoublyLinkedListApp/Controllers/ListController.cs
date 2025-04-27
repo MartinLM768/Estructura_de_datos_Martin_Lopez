@@ -11,9 +11,9 @@ namespace DoublyLinkedListApp.Controllers
             list = new DoublyLinkedList();
         }
 
-        public void AddToEnd(int data) => list.AddToEnd(data);
-        public void AddToStart(int data) => list.AddToStart(data);
-        public bool Remove(int data) => list.Remove(data);
+        public void AddToEnd(string data) => list.AddToEnd(data);
+        public void AddToStart(string data) => list.AddToStart(data);
+        public bool Remove(string data) => list.Remove(data);
         public string PrintList() => list.PrintList();
         public string PrintReverse() => list.PrintReverse();
     }

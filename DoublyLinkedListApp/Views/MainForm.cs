@@ -8,8 +8,9 @@ namespace DoublyLinkedListApp.Views
     {
         private TextBox txtValue;
         private Button btnAddToEnd, btnAddToStart, btnRemove, btnPrintList, btnPrintReverse;
-        private ListController controller;
+        private Label lblInstructions, lblOutput;
         private TextBox txtOutput;
+        private ListController controller;
 
         public MainForm()
         {
@@ -19,55 +20,150 @@ namespace DoublyLinkedListApp.Views
 
         private void InitializeComponents()
         {
-            this.Text = "Lista Doble Enlazada";
-            this.Size = new System.Drawing.Size(400, 300);
+            // Configuración del formulario
+            this.Text = "Lista Doble Enlazada (Strings)";
+            this.Size = new System.Drawing.Size(500, 400);
+            this.StartPosition = FormStartPosition.CenterScreen;
 
-            txtValue = new TextBox { Location = new System.Drawing.Point(20, 20), Width = 200 };
-            btnAddToEnd = new Button { Text = "Agregar al Final", Location = new System.Drawing.Point(20, 60) };
-            btnAddToStart = new Button { Text = "Agregar al Inicio", Location = new System.Drawing.Point(20, 100) };
-            btnRemove = new Button { Text = "Eliminar Nodo", Location = new System.Drawing.Point(20, 140) };
-            btnPrintList = new Button { Text = "Imprimir Lista", Location = new System.Drawing.Point(20, 180) };
-            btnPrintReverse = new Button { Text = "Imprimir Inverso", Location = new System.Drawing.Point(20, 220) };
-            txtOutput = new TextBox { Location = new System.Drawing.Point(150, 60), Width = 200, Height = 180, Multiline = true, ReadOnly = true };
+            // Etiqueta de instrucciones
+            lblInstructions = new Label
+            {
+                Text = "Ingrese un valor para la lista:",
+                Location = new System.Drawing.Point(20, 20),
+                AutoSize = true
+            };
 
+            // Cuadro de texto para ingresar valores
+            txtValue = new TextBox
+            {
+                Location = new System.Drawing.Point(20, 50),
+                Width = 200
+            };
+
+            // Botón para agregar al final
+            btnAddToEnd = new Button
+            {
+                Text = "Agregar al Final",
+                Location = new System.Drawing.Point(20, 90),
+                Width = 150,
+                Height = 40
+            };
             btnAddToEnd.Click += (s, e) =>
             {
-                if (int.TryParse(txtValue.Text, out int value))
+                string value = txtValue.Text;
+                if (!string.IsNullOrWhiteSpace(value))
                 {
                     controller.AddToEnd(value);
                     txtOutput.Text = "Nodo agregado al final.";
+                    txtValue.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, ingrese un valor válido.");
                 }
             };
 
+            // Botón para agregar al inicio
+            btnAddToStart = new Button
+            {
+                Text = "Agregar al Inicio",
+                Location = new System.Drawing.Point(200, 90),
+                Width = 150,
+                Height = 40
+            };
             btnAddToStart.Click += (s, e) =>
             {
-                if (int.TryParse(txtValue.Text, out int value))
+                string value = txtValue.Text;
+                if (!string.IsNullOrWhiteSpace(value))
                 {
                     controller.AddToStart(value);
                     txtOutput.Text = "Nodo agregado al inicio.";
+                    txtValue.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, ingrese un valor válido.");
                 }
             };
 
+            // Botón para eliminar un nodo
+            btnRemove = new Button
+            {
+                Text = "Eliminar Nodo",
+                Location = new System.Drawing.Point(20, 150),
+                Width = 150,
+                Height = 40
+            };
             btnRemove.Click += (s, e) =>
             {
-                if (int.TryParse(txtValue.Text, out int value))
+                string value = txtValue.Text;
+                if (!string.IsNullOrWhiteSpace(value))
                 {
                     if (controller.Remove(value))
                         txtOutput.Text = "Nodo eliminado.";
                     else
                         txtOutput.Text = "Nodo no encontrado.";
+                    txtValue.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, ingrese un valor válido.");
                 }
             };
 
-            btnPrintList.Click += (s, e) => txtOutput.Text = controller.PrintList();
-            btnPrintReverse.Click += (s, e) => txtOutput.Text = controller.PrintReverse();
+            // Botón para imprimir la lista en orden
+            btnPrintList = new Button
+            {
+                Text = "Imprimir Lista",
+                Location = new System.Drawing.Point(200, 150),
+                Width = 150,
+                Height = 40
+            };
+            btnPrintList.Click += (s, e) =>
+            {
+                txtOutput.Text = controller.PrintList();
+            };
 
+            // Botón para imprimir la lista en orden inverso
+            btnPrintReverse = new Button
+            {
+                Text = "Imprimir Inverso",
+                Location = new System.Drawing.Point(20, 210),
+                Width = 150,
+                Height = 40
+            };
+            btnPrintReverse.Click += (s, e) =>
+            {
+                txtOutput.Text = controller.PrintReverse();
+            };
+
+            // Etiqueta para la salida
+            lblOutput = new Label
+            {
+                Text = "Salida:",
+                Location = new System.Drawing.Point(20, 270),
+                AutoSize = true
+            };
+
+            // Cuadro de texto para mostrar la salida
+            txtOutput = new TextBox
+            {
+                Location = new System.Drawing.Point(20, 300),
+                Width = 400,
+                Height = 60,
+                Multiline = true,
+                ReadOnly = true
+            };
+
+            // Agregar controles al formulario
+            this.Controls.Add(lblInstructions);
             this.Controls.Add(txtValue);
             this.Controls.Add(btnAddToEnd);
             this.Controls.Add(btnAddToStart);
             this.Controls.Add(btnRemove);
             this.Controls.Add(btnPrintList);
             this.Controls.Add(btnPrintReverse);
+            this.Controls.Add(lblOutput);
             this.Controls.Add(txtOutput);
         }
     }

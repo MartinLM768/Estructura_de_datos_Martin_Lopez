@@ -2,11 +2,11 @@ namespace DoublyLinkedListApp.Models
 {
     public class Node
     {
-        public int Data { get; set; }
+        public string Data { get; set; }
         public Node Next { get; set; }
         public Node Previous { get; set; }
 
-        public Node(int data)
+        public Node(string data)
         {
             Data = data;
             Next = null;
@@ -19,7 +19,7 @@ namespace DoublyLinkedListApp.Models
         private Node head;
         private Node tail;
 
-        public void AddToEnd(int data)
+        public void AddToEnd(string data)
         {
             Node newNode = new Node(data);
             if (head == null)
@@ -35,7 +35,7 @@ namespace DoublyLinkedListApp.Models
             }
         }
 
-        public void AddToStart(int data)
+        public void AddToStart(string data)
         {
             Node newNode = new Node(data);
             if (head == null)
@@ -51,7 +51,7 @@ namespace DoublyLinkedListApp.Models
             }
         }
 
-        public bool Remove(int data)
+        public bool Remove(string data)
         {
             Node current = head;
 
