@@ -84,20 +84,27 @@ class HanoiGUI:
 
     def draw_torres(self):
         self.canvas.delete("all")
+        n = self.n
+        estado = self.estados[self.indice]
+        # Dibujar las bases de las torres
         for i, torre in enumerate(['A', 'B', 'C']):
             x = 100 + i * 200
             self.canvas.create_rectangle(x-5, 100, x+5, 250, fill="gray")
             self.canvas.create_text(x, 270, text=torre, font=("Arial", 16))
-        # Usar el estado actual
-        estado = self.estados[self.indice]
-        for i, torre in enumerate(['A', 'B', 'C']):
-            x = 100 + i * 200
-            torre_lista = estado[torre]
-            for j, disco in enumerate(torre_lista):
-                ancho = 20 + disco * 30
-                y = 240 - (len(torre_lista) - 1 - j) * 20
-                self.canvas.create_rectangle(x - ancho//2, y, x + ancho//2, y + 20, fill="skyblue", outline="black")
-                self.canvas.create_text(x, y + 10, text=str(disco), font=("Arial", 12))
+        # Dibujar los discos de abajo hacia arriba, fila por fila
+        for fila in range(n):
+            y = 240 - (n - 1 - fila) * 20  # Fila 0 es la más baja
+            for i, torre in enumerate(['A', 'B', 'C']):
+                x = 100 + i * 200
+                torre_lista = estado[torre]
+                # El disco que va en esta fila (de abajo hacia arriba)
+                idx = n - 1 - fila
+                if idx < len(torre_lista):
+                    disco = torre_lista[idx]
+                    ancho = 20 + disco * 30
+                    self.canvas.create_rectangle(x - ancho//2, y, x + ancho//2, y + 20, fill="skyblue", outline="black")
+                    self.canvas.create_text(x, y + 10, text=str(disco), font=("Arial", 12))
+                
         self.master.update()
 
         # Mensaje de completado
